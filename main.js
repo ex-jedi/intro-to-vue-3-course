@@ -1,11 +1,10 @@
-const app = {
+const app = Vue.createApp({
   data() {
     return {
       product: 'Socks',
-      description: 'Comfy Vue Mastery Footgloves',
+      // Solution
+      description: 'A warm fuzzy pair of socks.',
+      // Solution
     };
   },
-};
-
-// eslint-disable-next-line no-undef
-Vue.createApp(app).mount('#app');
+});
