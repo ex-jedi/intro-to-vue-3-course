@@ -8,6 +8,7 @@ const app = Vue.createApp({
       image: './assets/images/socks_green.jpg',
       href: 'https://www.vuemastery.com/courses/intro-to-vue-3/attribute-binding-vue3',
       inventory: 11,
+      onSale: true,
     };
   },
 });
