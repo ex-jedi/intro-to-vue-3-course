@@ -1,4 +1,14 @@
+// 'product-display' is the name of the component to use as HTML tag
 app.component('product-display', {
+  // Props. Way for components to receive data from higher scope
+  props: {
+    // Props object
+    premium: {
+      // Options and validation for prop
+      type: Boolean,
+      required: true,
+    },
+  },
   template:
     /* html */
     `      <div class="product-display">
