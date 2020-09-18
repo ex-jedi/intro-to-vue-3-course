@@ -6,7 +6,7 @@
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@next"></script>
+      <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <div id="app">
@@ -21,19 +21,21 @@
           </div>
           <div class="product-info">
             <h1>{{ title }}</h1>
-            <p v-if="inStock > 10">In Stock</p>
-            <p v-else-if="inStock <= 10 && inStock > 0">Almost sold out! </p>
+
+            <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
 
             <div
-              class="color-circle"
               v-for="(variant, index) in variants"
               :key="variant.id"
               @mouseover="updateVariant(index)"
-              :style="{ backgroundColor: variant.color }"></div>
+              class="color-circle"
+              :style="{ backgroundColor: variant.color }">
+            </div>
+
             <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" v-on:click="addToCart">Add to Cart</button>
           </div>
         </div>
