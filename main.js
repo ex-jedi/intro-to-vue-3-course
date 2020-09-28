@@ -2,14 +2,14 @@
 const app = Vue.createApp({
   data() {
     return {
-      cart: 0,
+      cart: [],
       // Data to be sent to component as prop.
       premium: true,
     };
   },
   methods: {
-    updateCart() {
-      this.cart += 1;
+    updateCart(id) {
+      this.cart.push(id);
     },
   },
 });
