@@ -11,5 +11,15 @@ const app = Vue.createApp({
     updateCart(id) {
       this.cart.push(id);
     },
+    reduceCart(id) {
+      // this.cart.push(id);
+      const removeIt = this.cart.indexOf(id);
+      if (removeIt > -1) {
+        this.cart.splice(removeIt, 1);
+        console.log(`Removing ${removeIt}`);
+      } else {
+        console.log('Nothing to see here!');
+      }
+    },
   },
 });
