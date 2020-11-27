@@ -15,12 +15,12 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <a :href="url">
-              <img :src="image" alt="">
-            </a>
+            <img v-bind:src="image">
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out Of Stock</p>
           </div>
         </div>
       </div>
