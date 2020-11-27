@@ -6,31 +6,20 @@
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
-      <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
   </head>
   <body>
     <div id="app">
-      <div class="nav-bar"></div>
-      <product-display></product-display>
-      <product-display></product-display>
-      <!-- Component receiving prop from main app scope  -->
-      <product-display :premium="premium"></product-display>
-
-      <div class="cart">Cart({{ cart }})</div>
-
+      <h1>{{product}}</h1>
+      <p>{{description}}</p>
     </div>
 
     <!-- Import App -->
     <script src="./main.js"></script>
 
-    <!-- Import Product Component -->
-    <script src="./components/ProductDisplay.js"></script>
-
-    <!-- Import Details Components -->
-    <script src="./components/ProductDetails.js"></script>
-
-    <!-- Mount App -->
+    <!-- Mount APP  -->
     <script>
+      // eslint-disable-next-line no-unused-vars
       const mountedApp = app.mount('#app');
     </script>
   </body>
