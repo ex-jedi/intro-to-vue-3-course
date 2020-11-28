@@ -21,4 +21,9 @@ const app = Vue.createApp({
       this.image = variantImage;
     },
   },
+  computed: {
+    title() {
+      return `${this.brand} ${this.product}`;
+    },
+  },
 });
