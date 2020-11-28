@@ -1,17 +1,14 @@
-// 'product-display' is the name of the component to use as HTML tag
 app.component('product-display', {
-  // Props. Way for components to receive data from higher scope
   props: {
-    // Props object
     premium: {
-      // Options and validation for prop
       type: Boolean,
       required: true,
     },
   },
   template:
     /* html */
-    ` <div class="product-display">
+    `
+      <div class="product-display">
         <div class="product-container">
           <div class="product-image">
             <img v-bind:src="image">
@@ -21,7 +18,7 @@ app.component('product-display', {
 
             <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
-            <p>Shipping: {{shipping}}</p>
+            <p>Shipping: {{ shipping }}</p>
             <product-details :details="details"></product-details>
 
             <div
@@ -35,9 +32,11 @@ app.component('product-display', {
             <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" v-on:click="addToCart">Add to Cart</button>
           </div>
         </div>
-      </div>`,
+      </div>
+  `,
   data() {
     return {
+      cart: 0,
       product: 'Socks',
       brand: 'Vue Mastery',
       selectedVariant: 0,
@@ -68,9 +67,9 @@ app.component('product-display', {
     },
     shipping() {
       if (this.premium) {
-        return 'Free!';
+        return 'Free';
       }
-      return '£2.99';
+      return '£4.99';
     },
   },
 });
