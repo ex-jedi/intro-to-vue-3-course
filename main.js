@@ -10,7 +10,6 @@ const app = Vue.createApp({
         { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
         { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 },
       ],
-      onSale: true,
     };
   },
   methods: {
@@ -19,7 +18,6 @@ const app = Vue.createApp({
     },
     updateVariant(index) {
       this.selectedVariant = index;
-      console.log(index);
     },
   },
   computed: {
@@ -27,14 +25,10 @@ const app = Vue.createApp({
       return `${this.brand} ${this.product}`;
     },
     image() {
-      console.log(this.variants);
       return this.variants[this.selectedVariant].image;
     },
     inStock() {
-      return this.variants[this.selectedVariant].quantity;
-    },
-    productOnSale() {
-      return `${this.brand} ${this.product} is on sale!`;
+      return this.variants[this.selectedVariant].image;
     },
   },
 });
