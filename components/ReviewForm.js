@@ -30,6 +30,10 @@ app.component('review-form', {
   },
   methods: {
     onSubmit() {
+      if (this.name === '' || this.review === '' || this.rating === null) {
+        alert('Complete review plz');
+        return;
+      }
       const productReview = {
         name: this.name,
         review: this.review,
