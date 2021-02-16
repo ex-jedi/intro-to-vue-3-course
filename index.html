@@ -24,6 +24,7 @@
             <p v-else-if="inventory === 1">Only {{ inventory }} pair left</p>
             <!-- Don't always need to pair a v-if with a v-else -->
             <p v-else>Out Of Stock</p>
+            <p v-if="onSale">On Sale</p>
           </div>
         </div>
       </div>
