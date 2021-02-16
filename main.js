@@ -3,6 +3,7 @@ const app = Vue.createApp({
   data() {
     return {
       product: 'Boots',
+      description: 'Things to put on your feet',
     };
   },
 });
