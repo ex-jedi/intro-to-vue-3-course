@@ -16,5 +16,9 @@ const app = Vue.createApp({
     addTocart() {
       this.cart += 1;
     },
+    updateImage(variantImage) {
+      this.image = variantImage;
+      console.log(variantImage);
+    },
   },
 });
