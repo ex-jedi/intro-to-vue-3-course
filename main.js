@@ -23,6 +23,7 @@ const app = Vue.createApp({
   },
   computed: {
     title() {
+      // Benefit is that this is cached. It only changes when necessary.
       return `${this.brand} ${this.product}`;
     },
   },
